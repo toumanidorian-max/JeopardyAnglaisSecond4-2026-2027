@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commonwealth Jeopardy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ÉCRAN D'ACCUEIL -->
+    <section id="start-screen" class="screen active">
+        <div class="hero">
+            <h1 class="title">COMMONWEALTH<span>JEOPARDY</span></h1>
+            <p class="subtitle">Test your knowledge of the Commonwealth!</p>
+            <p class="tagline">"How much do you know about the Commonwealth?"</p>
+            <div class="button-row">
+                <button id="play-btn" class="btn btn-primary" type="button">PLAY</button>
+                <button id="howto-btn" class="btn btn-secondary" type="button">HOW TO PLAY</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATEAU -->
+    <section id="board-screen" class="screen">
+        <header class="hud">
+            <h2 class="hud-title">COMMONWEALTH JEOPARDY</h2>
+            <div class="hud-stats">
+                <div class="stat">SCORE: <strong id="score">0</strong></div>
+                <div class="stat">QUESTIONS LEFT: <strong id="questions-left">15</strong></div>
+            </div>
+        </header>
+        <div id="board" class="board"></div>
+    </section>
+
+    <!-- ÉCRAN D'UNE QUESTION -->
+    <section id="question-screen" class="screen">
+        <div class="question-card">
+            <div id="q-category" class="q-category">CATEGORY</div>
+            <div id="q-points" class="q-points">0 POINTS</div>
+            <p id="q-text" class="q-text"></p>
+
+            <button id="show-answer-btn" class="btn btn-primary" type="button">SHOW ANSWER</button>
+
+            <div id="answer-box" class="answer-box hidden">
+                <div class="answer-label">ANSWER:</div>
+                <div id="a-text" class="answer-text"></div>
+            </div>
+
+            <div id="judge-buttons" class="button-row hidden">
+                <button id="correct-btn" class="btn btn-correct" type="button">CORRECT</button>
+                <button id="wrong-btn" class="btn btn-wrong" type="button">WRONG</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN DE PARTIE -->
+    <section id="gameover-screen" class="screen">
+        <div class="hero">
+            <h1 class="gameover-title">GAME OVER!</h1>
+            <p class="subtitle">Your final score is:</p>
+            <div id="final-score" class="final-score">0</div>
+            <div class="button-row">
+                <button id="play-again-btn" class="btn btn-primary" type="button">PLAY AGAIN</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FENÊTRE HOW TO PLAY -->
+    <div id="howto-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="howto-heading">
+        <div class="modal-box">
+            <h2 id="howto-heading">HOW TO PLAY</h2>
+            <p>Choose a category and a question.<br>
+               Read the question carefully.<br>
+               Click SHOW ANSWER when you are ready.<br>
+               If your answer is correct, click CORRECT.<br>
+               If your answer is wrong, click WRONG.<br>
+               Correct answers give you points.<br>
+               Wrong answers take points away.<br>
+               Use all 15 questions to finish the game.</p>
+            <button id="howto-close" class="btn btn-primary" type="button">CLOSE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
